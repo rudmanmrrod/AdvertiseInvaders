@@ -1584,11 +1584,11 @@ https://github.com/arcadeJHS/AvertiseInvaders
 					textHelper.writeText({id: "playAgain", cls: "text clickText menuText", text: "play again", onclick: startGame})					
 				];
 
-				if (gameBestScore && human.score > gameBestScore.score) {
+				/*if (gameBestScore && human.score > gameBestScore.score) {
 					gameOverContent.push(textHelper.writeAnything({type: "span", id:"nameLabel", cls:"labelSpan", innerhtml:"Name: "}));
 					gameOverContent.push(textHelper.writeAnything({type: "input", id:"nameInput", cls:"inputBox", attributes:[["type", "text"]]}));
 					gameOverContent.push(textHelper.writeText({id: "scoreSubmitButton", cls: "text clickText menuText", text: "save your score", onclick: submitScore}));
-				}
+				}*/
 
 				gameOverContent.push(textHelper.writeText({id: "tweetScore", cls: "text clickText", innerhtml: "<a target='blank' href='https://twitter.com/intent/tweet?original_referer=http://matteopiazza.org&text=Play%20Advertise%20Invaders%20on%20matteopiazza.org!%20My%20score:%20" + human.score + "!&tw_p=tweetbutton'>tweet your score</a>"}));
 
@@ -1671,9 +1671,9 @@ https://github.com/arcadeJHS/AvertiseInvaders
 		//if (document.readyState === "complete") {
 	window.WIinit = function() {		
 			var bestScore = null;
-
+			microSpaceInvaders("game", bestScore);
 			// retrieve score
-			qwest.post(
+			/*qwest.post(
 				'assets/php/si_call.php',
 				{action: "getScore"}
 			)
@@ -1688,7 +1688,7 @@ https://github.com/arcadeJHS/AvertiseInvaders
 			.complete(function(){
 		        // start game
 				microSpaceInvaders("game", bestScore);
-		    });
+		    });*/
 	}
 
 		//}
